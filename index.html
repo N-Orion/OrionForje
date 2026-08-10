@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrionForge</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Imagens/favicon.png">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ABAS -->
+        <div class="tabs">
+            <button class="tab active" data-tab="forjar">🎲 Forjar</button>
+            <button class="tab" data-tab="salvos">💾 Meus Salvos</button>
+            <button class="tab" data-tab="config">⚙️ Configurações</button>
+        </div>
+
+        <!-- ABA FORJAR -->
+        <div id="forjar" class="tab-content active">
+
+            <div class="logo">
+                <img src="Imagens/logo.png" alt="OrionForge" class="logo-img">
+                <h1>OrionForge</h1>
+            </div>
+
+            <p class="subtitle">Onde campanhas são forjadas</p>
+
+            <div class="botoes">
+                <button id="btnNPC">🎲 Gerar NPC</button>
+                <button id="btnMissaoCurta">📜 Missão Curta</button>
+                <button id="btnMissaoLonga">🗺️ Missão Longa</button>
+                <button id="btnRegiao">🌍 Gerar Região</button>
+                <button id="btnItemMagico">✨ Gerar Item Mágico</button>
+                <button id="btnPuzzle">🧩 Gerar Puzzle</button>
+                <button id="btnRegraCasa">🎭 Regra da Casa</button>
+            </div>
+
+            <div id="resultado">
+                <p>Clique em um botão para começar a forjar sua campanha.</p>
+            </div>
+
+            <div class="acoes">
+                <button id="btnCopiar">📋 Copiar</button>
+                <button id="btnSalvar">💾 Salvar</button>
+            </div>
+
+        </div>
+
+        <!-- ABA SALVOS -->
+        <div id="salvos" class="tab-content">
+            <h2>💾 Meus Salvos</h2>
+            <div id="listaSalvos">
+                <p>Nenhum conteúdo salvo ainda.</p>
+            </div>
+        </div>
+
+        <!-- ABA CONFIGURAÇÕES -->
+        <div id="config" class="tab-content">
+            <h2>⚙️ Configurações</h2>
+
+            <button id="btnLimparSalvos">🗑️ Limpar Salvos</button>
+            <button id="btnTemaMagma">🌋 Tema Magma</button>
+
+            <p style="margin-top:16px;color:#aaa;">
+                Mais opções serão adicionadas em futuras versões do OrionForge.
+            </p>
+        </div>
+
+        <div class="footer">
+            OrionForge © 2026 — Ferramentas para mestres de RPG
+        </div>
+
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
