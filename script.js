@@ -344,7 +344,7 @@ function tocarForjaPesada() {
 
 function tocarPapel() {
   somPapel.currentTime = 0;
-  somPapel.play().catch(() => {});
+  somPapel.play().catch(e => console.log("Erro som papel:", e));
 }
 
 function gerarNPC() {
@@ -469,7 +469,6 @@ function carregarSalvos() {
 
 function limparSalvos() {
   tocarPapel();
-
   localStorage.removeItem("orionforge_salvos");
   carregarSalvos();
   mostrarToast("🗑️ Todos os salvos foram removidos!");

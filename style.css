@@ -34,6 +34,33 @@ body {
     0 0 35px rgba(255, 87, 34, 0.15);
 }
 
+.mini-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #5b2b1d;
+}
+
+.mini-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.mini-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.mini-title:hover {
+  color: #ffb089;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -508,4 +535,81 @@ body.tema-arcano .salvo-item {
 
 .cta-button:hover {
   transform: translateY(-2px);
+}
+
+.btn-voltar {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff5a1f, #c2410c);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.btn-voltar:hover {
+  transform: translateY(-2px);
+  color: white;
+}
+
+.menu-principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.menu-principal a {
+  padding: 10px 16px;
+  border: 1px solid #5b2b1d;
+  border-radius: 12px;
+  color: #f5f5f5;
+  text-decoration: none;
+  background: rgba(255,255,255,0.03);
+  transition: all 0.2s ease;
+}
+
+.menu-principal a:hover {
+  background: rgba(255, 90, 31, 0.15);
+  color: #ffb089;
+}
+
+/* =========================
+   PÁGINAS INSTITUCIONAIS
+========================= */
+
+.pagina-texto {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.pagina-texto h1 {
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.pagina-texto h2 {
+  margin-top: 32px;
+  margin-bottom: 14px;
+  color: #ffb089;
+}
+
+.pagina-texto p {
+  margin-bottom: 18px;
+  line-height: 1.8;
+  color: #e5e7eb;
+}
+
+.pagina-texto ul {
+  margin-left: 22px;
+  margin-bottom: 22px;
+}
+
+.pagina-texto li {
+  margin-bottom: 10px;
 }
