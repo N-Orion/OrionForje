@@ -1,4 +1,10 @@
+// ============================================================
+// ORIONFORGE — JAVASCRIPT
+// ============================================================
 
+// =========================
+// BANCO DE DADOS
+// =========================
 
 const nomes = [
   "Edrik", "Lysandra", "Borin", "Selene", "Tharion", "Mira",
@@ -10,17 +16,35 @@ const nomes = [
   "Fiona", "Gideon", "Helena", "Icarus", "Jasper", "Kiera",
   "Liora", "Magnus", "Nerissa", "Oberon", "Peregrine", "Quinn",
   "Rhiannon", "Soren", "Talia", "Ulric", "Valeria", "Wren",
-  "Xanthe", "Yorick", "Zinnia", "Alaric", "Briony", "Cyrus", "Dahlia", "Eamon",
-  "Garron", "Hespera", "Isidore", "Jocelyn", "Kaelen", "Mordecai", "Nimue", "Oriana"
+  "Xanthe", "Yorick", "Zinnia", "Alaric", "Briony", "Cyrus",
+  "Dahlia", "Eamon", "Garron", "Hespera", "Isidore", "Jocelyn",
+  "Kaelen", "Mordecai", "Nimue", "Oriana"
 ];
 
 const profissoes = [
-  "Ferreiro", "Mercadora", "Coveiro", "Caçadora", "Alquimista",
-  "Guarda aposentado", "Bibliotecário arcano", "Contrabandista",
-  "Sacerdotisa", "Minerador", "Taverneiro", "Caçador de recompensas",
-  "Cartógrafo", "Curandeiro", "Espião", "Inventor excêntrico",
-  "Mestre de armas", "Navegador", "Pescador", "Sacerdote itinerante",
-  "Vidente", "Xamã", "Zelador de ruínas"
+  "Ferreiro",
+  "Mercadora",
+  "Coveiro",
+  "Caçadora",
+  "Alquimista",
+  "Guarda aposentado",
+  "Bibliotecário arcano",
+  "Contrabandista",
+  "Sacerdotisa",
+  "Minerador",
+  "Taverneiro",
+  "Caçador de recompensas",
+  "Cartógrafo",
+  "Curandeiro",
+  "Espião",
+  "Inventor excêntrico",
+  "Mestre de armas",
+  "Navegador",
+  "Pescador",
+  "Sacerdote itinerante",
+  "Vidente",
+  "Xamã",
+  "Zelador de ruínas"
 ];
 
 const segredos = [
@@ -36,6 +60,24 @@ const segredos = [
   "tem visões de um futuro apocalíptico",
   "há rumores de que é imortal e vive há séculos",
   "já negociou com demônios para obter poder"
+];
+
+const humores = [
+  "rabugento e impaciente",
+  "calmo e observador",
+  "eufórico e falante",
+  "melancólico e distante",
+  "desconfiado de todos",
+  "extremamente educado",
+  "nervoso e inquieto",
+  "sarcástico e provocador",
+  "alegre e otimista",
+  "frio e calculista",
+  "tímido e hesitante",
+  "dramático e exagerado",
+  "curioso e intrometido",
+  "sereno mesmo diante do perigo",
+  "amigável, mas excessivamente cauteloso"
 ];
 
 const ganchos = [
@@ -89,6 +131,24 @@ const recompensas = [
   "um pergaminho contendo um ritual perdido"
 ];
 
+const urgencias = [
+  "algo acontecerá ao pôr do sol se ninguém agir",
+  "uma testemunha importante está prestes a desaparecer",
+  "os inimigos já descobriram que os aventureiros estão envolvidos",
+  "o local será destruído em poucas horas",
+  "uma criatura poderosa está se aproximando",
+  "a pessoa que contratou os aventureiros será executada ao amanhecer",
+  "um ritual já começou e não pode mais ser interrompido facilmente",
+  "a única pista encontrada desaparecerá com a próxima maré",
+  "uma guerra pode começar se ninguém interferir",
+  "os responsáveis estão prestes a fugir da região",
+  "uma doença misteriosa está se espalhando rapidamente",
+  "o objeto procurado será vendido para outro reino ainda hoje",
+  "uma passagem importante ficará inacessível em breve",
+  "uma segunda vítima foi marcada e será atacada em breve",
+  "algo muito pior acontecerá caso o problema seja ignorado"
+];
+
 const itensMagicos = [
   "Anel das Brasas Eternas",
   "Lâmina do Crepúsculo",
@@ -107,6 +167,24 @@ const itensMagicos = [
   "Elmo do Rei Afogado"
 ];
 
+const bangs = [
+  "Dois guardas arrombam a porta procurando por alguém.",
+  "Um assassino tenta envenenar a bebida de um dos aventureiros.",
+  "Uma explosão acontece no distrito vizinho.",
+  "Um mensageiro ferido chega carregando uma informação urgente.",
+  "Uma criatura cai do céu bem diante dos aventureiros.",
+  "Alguém grita o nome de um dos personagens no meio da multidão.",
+  "As portas da cidade são fechadas repentinamente.",
+  "Um incêndio começa em um prédio próximo.",
+  "Um estranho coloca uma pequena caixa nas mãos de um dos aventureiros e foge.",
+  "Um grupo armado aparece procurando pelos personagens.",
+  "Uma pessoa importante é sequestrada diante dos aventureiros.",
+  "Um terremoto revela uma passagem subterrânea.",
+  "Uma criatura desconhecida começa a atacar a região.",
+  "Um velho conhecido aparece pedindo ajuda desesperadamente.",
+  "Um cadáver cai de uma janela próxima segurando uma mensagem."
+];
+
 const efeitos = [
   "permite enxergar no escuro absoluto",
   "concede resistência moderada ao fogo",
@@ -123,6 +201,129 @@ const efeitos = [
   "absorve uma pequena quantidade de dano mágico antes de se dissipar",
   "permite ouvir sussurros distantes trazidos pelo vento",
   "marca criaturas hostis com um brilho visível apenas para o portador"
+];
+
+const papeisDesafio = [
+  {
+    titulo: "O Capanga",
+    icone: "🗡️",
+    funcao: "Pressionar o grupo através de quantidade e ritmo.",
+    comportamento: "Ataca em grupo, ocupa espaço e não hesita em recuar quando perde vantagem.",
+    adaptacao: "Use inimigos básicos ou pouco resistentes disponíveis no sistema da sua mesa.",
+    fraqueza: "Individualmente é fraco e pode ser derrotado rapidamente.",
+    complicacao: "Quando o grupo começa a vencê-los, chegam novos reforços.",
+    pergunta: "Quem está enviando esses inimigos?"
+  },
+  {
+    titulo: "O Tanque",
+    icone: "🛡️",
+    funcao: "Absorver pressão e impedir que os jogadores alcancem algo mais importante.",
+    comportamento: "Avança lentamente, protege aliados e ocupa posições estratégicas.",
+    adaptacao: "Escolha uma criatura ou inimigo resistente do sistema utilizado pela mesa.",
+    fraqueza: "É lento, previsível ou possui dificuldade para lidar com ataques indiretos.",
+    complicacao: "Ao perceber que está perdendo, começa a destruir o ambiente para bloquear o caminho.",
+    pergunta: "O que ele está protegendo?"
+  },
+  {
+    titulo: "O Artilheiro",
+    icone: "🎯",
+    funcao: "Punir jogadores que permanecem expostos e controlar o espaço à distância.",
+    comportamento: "Mantém distância, procura posições elevadas e prioriza alvos vulneráveis.",
+    adaptacao: "Use um inimigo capaz de atacar à distância ou causar efeitos perigosos de longe.",
+    fraqueza: "É vulnerável quando os jogadores conseguem alcançá-lo.",
+    complicacao: "Ele começa a mudar de posição constantemente, tornando o terreno parte do desafio.",
+    pergunta: "Por que ele não pode simplesmente fugir?"
+  },
+  {
+    titulo: "O Controlador",
+    icone: "🕸️",
+    funcao: "Limitar opções e alterar o posicionamento dos jogadores.",
+    comportamento: "Evita confronto direto e tenta separar o grupo.",
+    adaptacao: "Use efeitos de lentidão, medo, imobilização, obstáculos ou qualquer recurso equivalente do sistema.",
+    fraqueza: "Possui pouca capacidade de enfrentar jogadores diretamente.",
+    complicacao: "Quanto mais tempo permanecer ativo, mais difícil fica atravessar o cenário.",
+    pergunta: "Quem se beneficia enquanto os jogadores estão presos?"
+  },
+  {
+    titulo: "O Assassino",
+    icone: "🗡️",
+    funcao: "Punir distrações e transformar vulnerabilidade em perigo imediato.",
+    comportamento: "Espera uma abertura, escolhe um alvo isolado e ataca rapidamente.",
+    adaptacao: "Use um inimigo furtivo, móvel ou especializado em ataques contra alvos vulneráveis.",
+    fraqueza: "Perde grande parte da vantagem quando é descoberto.",
+    complicacao: "Se escapar, poderá retornar em outro momento.",
+    pergunta: "Por que esse alvo específico foi escolhido?"
+  },
+  {
+    titulo: "O Guardião",
+    icone: "👑",
+    funcao: "Impedir o acesso a algo importante.",
+    comportamento: "Permanece próximo do objetivo e reage a qualquer tentativa de aproximação.",
+    adaptacao: "Pode ser uma criatura, guerreiro, entidade, mecanismo ou até uma pessoa.",
+    fraqueza: "Está preso ao seu objetivo ou possui uma condição que pode ser explorada.",
+    complicacao: "Derrotá-lo não resolve necessariamente o problema.",
+    pergunta: "O que existe atrás dele?"
+  },
+  {
+    titulo: "O Perigo Ambiental",
+    icone: "🔥",
+    funcao: "Transformar o próprio cenário em uma ameaça.",
+    comportamento: "Não possui intenção própria; o perigo simplesmente continua acontecendo.",
+    adaptacao: "Use incêndios, desmoronamentos, veneno, enchentes, frio extremo ou qualquer ameaça equivalente.",
+    fraqueza: "Pode ser contornado, controlado ou utilizado pelos jogadores.",
+    complicacao: "A situação piora enquanto os jogadores discutem ou hesitam.",
+    pergunta: "O que acontecerá se ninguém fizer nada?"
+  },
+  {
+    titulo: "A Contagem Regressiva",
+    icone: "⏳",
+    funcao: "Impedir que os jogadores tenham tempo infinito para planejar.",
+    comportamento: "O desafio se torna progressivamente pior.",
+    adaptacao: "Estabeleça uma quantidade de rodadas, minutos ou etapas antes de algo acontecer.",
+    fraqueza: "Os jogadores podem acelerar a solução se assumirem riscos.",
+    complicacao: "Cada etapa perdida aumenta o custo da solução.",
+    pergunta: "O que acontece quando o tempo acabar?"
+  },
+  {
+    titulo: "O Obstáculo",
+    icone: "🧩",
+    funcao: "Impedir o progresso sem depender de combate.",
+    comportamento: "Exige observação, criatividade, conhecimento ou uso inteligente dos recursos.",
+    adaptacao: "Transforme portas, enigmas, ambientes perigosos ou problemas logísticos em desafios.",
+    fraqueza: "Existe mais de uma maneira de resolver o problema.",
+    complicacao: "Uma solução rápida pode criar um problema posterior.",
+    pergunta: "Qual solução os jogadores ainda não consideraram?"
+  },
+  {
+    titulo: "O Conflito Social",
+    icone: "👥",
+    funcao: "Criar tensão através de negociação, autoridade ou interesses conflitantes.",
+    comportamento: "Resiste aos jogadores porque possui algo a ganhar ou perder.",
+    adaptacao: "Pode ser um nobre, comerciante, líder, testemunha, criminoso ou aliado.",
+    fraqueza: "Possui desejos que podem ser explorados.",
+    complicacao: "A conversa atrai a atenção de alguém que não deveria estar ouvindo.",
+    pergunta: "O que essa pessoa realmente quer?"
+  },
+  {
+    titulo: "A Perseguição",
+    icone: "🏃",
+    funcao: "Transformar movimento e urgência no próprio desafio.",
+    comportamento: "O alvo tenta escapar ou os jogadores precisam alcançá-lo.",
+    adaptacao: "Use obstáculos, terrenos difíceis, atalhos e consequências para representar a perseguição.",
+    fraqueza: "O alvo possui uma rota previsível ou precisa chegar a algum lugar específico.",
+    complicacao: "Um terceiro grupo entra na perseguição.",
+    pergunta: "O que acontece se o alvo escapar?"
+  },
+  {
+    titulo: "O Sacrifício",
+    icone: "💀",
+    funcao: "Forçar os jogadores a escolherem entre duas coisas importantes.",
+    comportamento: "O desafio não possui uma solução completamente perfeita.",
+    adaptacao: "Faça os jogadores escolherem entre tempo, recursos, segurança, informação ou pessoas.",
+    fraqueza: "Existe sempre alguma forma de reduzir o custo.",
+    complicacao: "A escolha terá consequências futuras.",
+    pergunta: "O que os jogadores estão dispostos a perder?"
+  }
 ];
 
 const puzzles = [
@@ -194,6 +395,58 @@ const regrasDaCasa = [
   "Todo personagem começa com um objeto estranho sem explicação. Em algum momento da campanha, o mestre revelará sua importância.",
   "Após uma falha crítica, o jogador pode narrar uma consequência cômica em vez de sofrer uma punição severa.",
   "Uma vez por sessão, o grupo pode pedir um 'flashback rápido' para justificar uma preparação anterior plausível."
+];
+
+const tiposConfronto = [
+  "Capanga",
+  "Tanque",
+  "Elite",
+  "Chefe",
+  "Perigo Ambiental",
+  "Controlador",
+  "Emboscador",
+  "Perseguidor",
+  "Guardião",
+  "Enxame"
+];
+
+const comportamentosConfronto = [
+  "avança diretamente contra o alvo mais vulnerável",
+  "protege uma criatura ou objeto importante",
+  "tenta separar o grupo antes de atacar",
+  "usa o ambiente a seu favor",
+  "pressiona os personagens sem dar tempo para descanso",
+  "recuará quando estiver em desvantagem para atacar novamente depois",
+  "tenta capturar um personagem em vez de simplesmente derrotá-lo",
+  "ignora os personagens inicialmente e corre em direção ao seu verdadeiro objetivo",
+  "ataca em conjunto, coordenando seus movimentos",
+  "provoca os personagens para fazê-los cometer um erro"
+];
+
+const objetivosConfronto = [
+  "impedir que os personagens alcancem determinado local",
+  "proteger algo que está prestes a ser descoberto",
+  "ganhar tempo para que outro evento aconteça",
+  "capturar alguém vivo",
+  "forçar os personagens a abandonar uma posição",
+  "roubar um objeto importante",
+  "eliminar uma testemunha",
+  "escapar com uma informação valiosa",
+  "impedir que um ritual seja interrompido",
+  "sobreviver tempo suficiente para receber reforços"
+];
+
+const complicacoesConfronto = [
+  "o terreno começa a desmoronar durante o confronto",
+  "há civis ou aliados em perigo nas proximidades",
+  "o inimigo possui uma segunda estratégia escondida",
+  "o confronto atrai outras criaturas",
+  "um dos inimigos não está realmente do lado dos outros",
+  "o objetivo verdadeiro só fica claro depois que o confronto começa",
+  "o ambiente oferece uma vantagem perigosa para ambos os lados",
+  "o inimigo pode fugir e retornar mais tarde",
+  "o confronto acontece sob uma contagem regressiva",
+  "vencer o confronto não significa necessariamente resolver o problema"
 ];
 
 const floras = [
@@ -286,6 +539,42 @@ const rumores = [
   "Viajantes desaparecidos teriam sido vistos dias depois caminhando em silêncio na direção das montanhas, como se estivessem hipnotizados."
 ];
 
+const lootMissao = [
+  "o favor de um nobre local",
+  "um mapa antigo escondido no verso de um quadro",
+  "uma carta contendo o nome de alguém que deveria estar morto",
+  "uma chave sem identificação que abre algo importante",
+  "um documento capaz de provar uma antiga traição",
+  "um medalhão pertencente a uma família desaparecida",
+  "um diário com páginas arrancadas justamente no trecho mais importante",
+  "um convite para uma sociedade secreta",
+  "um mapa indicando uma região que não aparece em nenhum mapa oficial",
+  "um antigo símbolo que pode garantir passagem por território inimigo",
+  "uma dívida que alguém poderoso agora tem com o grupo",
+  "um nome verdadeiro capaz de comprometer uma figura importante",
+  "um fragmento de uma relíquia que parece estar incompleto",
+  "uma informação sobre a verdadeira origem de um personagem",
+  "uma pista que conecta a missão atual a um acontecimento muito maior"
+];
+
+const lootKill = [
+  "algumas moedas e pequenos objetos pessoais",
+  "uma arma parcialmente danificada",
+  "uma pedra preciosa incomum",
+  "uma runa gravada em osso",
+  "um componente raro para magia",
+  "um frasco contendo uma substância desconhecida",
+  "um mapa rudimentar com uma localização marcada",
+  "um amuleto de origem desconhecida",
+  "uma chave enferrujada",
+  "um fragmento de cristal mágico",
+  "uma pequena relíquia religiosa",
+  "um símbolo pertencente a uma organização secreta",
+  "uma carta que revela quem contratou a criatura",
+  "um objeto aparentemente inútil que pode ter valor posteriormente",
+  "um item mágico de poder limitado"
+];
+
 const origensMagicas = [
   "foi forjado durante uma antiga guerra entre reinos e dragões",
   "foi encontrado nas ruínas submersas de uma cidade esquecida",
@@ -304,24 +593,81 @@ const origensMagicas = [
   "foi forjado para selar um portal entre o mundo mortal e os reinos espirituais"
 ];
 
+const tiposMercadores = [
+  "Mercador de materiais para magia",
+  "Alquimista especializado em poções",
+  "Vendedor de comidas exóticas",
+  "Taverneiro especializado em bebidas raras",
+  "Mercador de artefatos mágicos",
+  "Vendedor de armas antigas",
+  "Mercador de pergaminhos e grimórios",
+  "Comerciante de joias encantadas",
+  "Vendedor de componentes para rituais",
+  "Mercador de relíquias encontradas em ruínas",
+  "Comerciante de ervas e ingredientes raros",
+  "Vendedor de itens para aventureiros",
+  "Mercador de objetos amaldiçoados",
+  "Comerciante de mapas e informações",
+  "Vendedor ambulante de bugigangas mágicas"
+];
+
+const peculiaridadesMercadores = [
+  "nunca revela seu verdadeiro nome",
+  "sempre tenta trocar mercadorias em vez de aceitar dinheiro",
+  "conhece histórias demais sobre os aventureiros",
+  "mantém um pequeno animal mágico sobre o balcão",
+  "afirma que todos os seus produtos possuem uma história",
+  "vende alguns itens sem saber que são mágicos",
+  "recusa-se a negociar com membros da nobreza",
+  "possui um estoque secreto escondido atrás da loja",
+  "cobra preços diferentes dependendo da personalidade do cliente",
+  "sempre sabe quando alguém está mentindo",
+  "coleciona objetos estranhos recebidos como pagamento",
+  "tem uma dívida com uma poderosa guilda",
+  "desaparece misteriosamente durante certas noites",
+  "aceita favores como pagamento",
+  "parece saber exatamente o que cada cliente está procurando"
+];
+
+
+// =========================
+// SONS
+// =========================
+
 const somForja = new Audio("Sons/forja.mp3");
 somForja.volume = 0.25;
+
 const somForjaPesada = new Audio("Sons/forjastrikes.mp3");
 somForjaPesada.volume = 0.22;
+
 const somPapel = new Audio("Sons/papel.mp3");
 somPapel.volume = 0.18;
 
+
+// =========================
+// FUNÇÕES AUXILIARES
+// =========================
 
 function aleatorio(lista) {
   return lista[Math.floor(Math.random() * lista.length)];
 }
 
 function atualizarResultado(html) {
-  document.getElementById("resultado").innerHTML = html;
+  const resultado = document.getElementById("resultado");
+
+  if (!resultado) return;
+
+  resultado.classList.add("forjando");
+
+  setTimeout(() => {
+    resultado.innerHTML = html;
+    resultado.classList.remove("forjando");
+  }, 120);
 }
 
 function mostrarToast(mensagem) {
   const toast = document.getElementById("toast");
+
   if (!toast) return;
 
   toast.textContent = mensagem;
@@ -331,6 +677,11 @@ function mostrarToast(mensagem) {
     toast.classList.remove("show");
   }, 2500);
 }
+
+
+// =========================
+// CONTROLE DE ÁUDIO
+// =========================
 
 function tocarForja() {
   somForja.currentTime = 0;
@@ -344,14 +695,21 @@ function tocarForjaPesada() {
 
 function tocarPapel() {
   somPapel.currentTime = 0;
-  somPapel.play().catch(e => console.log("Erro som papel:", e));
+  somPapel.play().catch(() => {});
 }
+
+
+// =========================
+// GERADORES
+// =========================
 
 function gerarNPC() {
   tocarForja();
+
   atualizarResultado(`
     <h2>🎭 ${aleatorio(nomes)}</h2>
     <p><strong>Função:</strong> ${aleatorio(profissoes)}</p>
+    <p><strong>Humor:</strong> ${aleatorio(humores)}</p>
     <p><strong>Segredo:</strong> ${aleatorio(segredos)}</p>
     <p><strong>Gancho:</strong> ${aleatorio(ganchos)}.</p>
   `);
@@ -359,6 +717,7 @@ function gerarNPC() {
 
 function gerarMissaoCurta() {
   tocarForja();
+
   atualizarResultado(`
     <h2>📜 Missão Curta</h2>
     <p><strong>Objetivo:</strong> ${aleatorio(ganchos)}.</p>
@@ -369,6 +728,7 @@ function gerarMissaoCurta() {
 
 function gerarMissaoLonga() {
   tocarForja();
+
   atualizarResultado(`
     <h2>🗺️ Missão Longa</h2>
     <p><strong>Introdução:</strong> Uma série de eventos estranhos começou a ocorrer ${aleatorio(locais)}.</p>
@@ -380,6 +740,7 @@ function gerarMissaoLonga() {
 
 function gerarRegiao() {
   tocarForja();
+
   atualizarResultado(`
     <h2>🌍 Região Gerada</h2>
     <p><strong>Flora:</strong> ${aleatorio(floras)}.</p>
@@ -396,15 +757,14 @@ function gerarItemMagico() {
 
   atualizarResultado(`
     <h2>✨ ${aleatorio(itensMagicos)}</h2>
-
     <p><strong>Efeito:</strong> ${aleatorio(efeitos)}.</p>
-
     <p><strong>Origem:</strong> Dizem que este item ${aleatorio(origensMagicas)}.</p>
   `);
 }
 
 function gerarPuzzle() {
   tocarForja();
+
   const p = aleatorio(puzzles);
 
   atualizarResultado(`
@@ -413,33 +773,216 @@ function gerarPuzzle() {
   `);
 }
 
+function gerarLootMissao() {
+  tocarForja();
+
+  atualizarResultado(`
+    <h2>📜 Loot de Missão</h2>
+    <p><strong>Encontrado:</strong> ${aleatorio(lootMissao)}.</p>
+  `);
+}
+
+function gerarLootKill() {
+  tocarForja();
+
+  atualizarResultado(`
+    <h2>💀 Loot de Combate</h2>
+    <p><strong>Encontrado:</strong> ${aleatorio(lootKill)}.</p>
+  `);
+}
+
 function gerarRegraCasa() {
   tocarForja();
+
   atualizarResultado(`
     <h2>🎭 Regra da Casa</h2>
     <p>${aleatorio(regrasDaCasa)}</p>
   `);
 }
 
-function copiarResultado() {
-  const texto = document.getElementById("resultado").innerText;
+function gerarMercador() {
+  tocarForja();
 
-  navigator.clipboard.writeText(texto).then(() => {
-    mostrarToast("📋 Conteúdo copiado!");
-  });
+  atualizarResultado(`
+    <h2>🧑‍💼 Mercador</h2>
+    <p><strong>Nome:</strong> ${aleatorio(nomes)}</p>
+    <p><strong>Especialidade:</strong> ${aleatorio(tiposMercadores)}</p>
+    <p><strong>Peculiaridade:</strong> ${aleatorio(peculiaridadesMercadores)}.</p>
+    <p><strong>Local:</strong> ${aleatorio(locais)}.</p>
+  `);
+}
+
+function gerarBang() {
+  tocarForja();
+
+  atualizarResultado(`
+    <h2>💥 BANG!</h2>
+
+    <p>${aleatorio(bangs)}</p>
+
+    <p><strong>O que isso pode significar?</strong></p>
+
+    <p>
+      O evento não precisa ter uma solução imediata.
+      Use-o para criar movimento, pressão ou uma nova decisão para os jogadores.
+    </p>
+  `);
+}
+
+function gerarPapelDesafio() {
+  tocarForja();
+
+  const papel = aleatorio(papeisDesafio);
+
+  atualizarResultado(`
+    <h2>${papel.icone} ${papel.titulo}</h2>
+
+    <p>
+      <strong>Função:</strong>
+      ${papel.funcao}
+    </p>
+
+    <p>
+      <strong>Comportamento:</strong>
+      ${papel.comportamento}
+    </p>
+
+    <p>
+      <strong>Como adaptar:</strong>
+      ${papel.adaptacao}
+    </p>
+
+    <p>
+      <strong>Fraqueza:</strong>
+      ${papel.fraqueza}
+    </p>
+
+    <p>
+      <strong>Complicação:</strong>
+      ${papel.complicacao}
+    </p>
+
+    <p>
+      <strong>💭 Pergunta para o mestre:</strong>
+      ${papel.pergunta}
+    </p>
+  `);
+}
+
+function gerarConfronto() {
+  // Corrigido: tocarDado() não existia.
+  tocarForja();
+
+  const tipo = aleatorio(tiposConfronto);
+  const comportamento = aleatorio(comportamentosConfronto);
+  const objetivo = aleatorio(objetivosConfronto);
+  const complicacao = aleatorio(complicacoesConfronto);
+
+  atualizarResultado(`
+    <h2>⚔️ Confronto</h2>
+
+    <p><strong>Função:</strong> ${tipo}</p>
+
+    <p>
+      <strong>Objetivo:</strong>
+      ${objetivo}.
+    </p>
+
+    <p>
+      <strong>Comportamento:</strong>
+      ${comportamento}.
+    </p>
+
+    <p>
+      <strong>Complicação:</strong>
+      ${complicacao}.
+    </p>
+
+    <p>
+      <strong>Dica para o mestre:</strong>
+      Use o inimigo mais apropriado do seu sistema para representar essa função.
+      O desafio deve vir da situação, não apenas dos números.
+    </p>
+  `);
+}
+
+function gerarForjaRapida() {
+  tocarForjaPesada();
+
+  atualizarResultado(`
+    <h2>⚒️ Forja Rápida</h2>
+
+    <hr>
+
+    <h3>🎭 NPC</h3>
+    <p><strong>Nome:</strong> ${aleatorio(nomes)}</p>
+    <p><strong>Profissão:</strong> ${aleatorio(profissoes)}</p>
+
+    <hr>
+
+    <h3>📜 Missão</h3>
+    <p>${aleatorio(ganchos)} ${aleatorio(locais)}</p>
+    <p><strong>Recompensa:</strong> ${aleatorio(recompensas)}</p>
+
+    <hr>
+
+    <h3>🌍 Região</h3>
+    <p><strong>Economia:</strong> ${aleatorio(economias)}</p>
+    <p><strong>Regime:</strong> ${aleatorio(regimes)}</p>
+
+    <hr>
+
+    <h3>🚨 Urgência</h3>
+    <p><strong>Urgência:</strong> ${aleatorio(urgencias)}</p>
+
+    <hr>
+
+    <h3>✨ Item Especial</h3>
+    <p><strong>${aleatorio(itensMagicos)}</strong></p>
+    <p>${aleatorio(efeitos)}</p>
+  `);
+}
+
+
+// =========================
+// COPIAR / SALVAR
+// =========================
+
+function copiarResultado() {
+  const resultado = document.getElementById("resultado");
+
+  if (!resultado) return;
+
+  const texto = resultado.innerText;
+
+  navigator.clipboard.writeText(texto)
+    .then(() => {
+      mostrarToast("📋 Conteúdo copiado!");
+    })
+    .catch(() => {
+      mostrarToast("❌ Não foi possível copiar.");
+    });
 }
 
 function salvarResultado() {
-  const conteudo = document.getElementById("resultado").innerHTML;
+  const resultado = document.getElementById("resultado");
 
-  let salvos = JSON.parse(localStorage.getItem("orionforge_salvos")) || [];
+  if (!resultado) return;
+
+  const conteudo = resultado.innerHTML;
+
+  let salvos =
+    JSON.parse(localStorage.getItem("orionforge_salvos")) || [];
 
   salvos.unshift({
     data: new Date().toLocaleString("pt-BR"),
     conteudo
   });
 
-  localStorage.setItem("orionforge_salvos", JSON.stringify(salvos));
+  localStorage.setItem(
+    "orionforge_salvos",
+    JSON.stringify(salvos)
+  );
 
   mostrarToast("💾 Resultado salvo!");
 
@@ -451,7 +994,8 @@ function carregarSalvos() {
 
   if (!lista) return;
 
-  const salvos = JSON.parse(localStorage.getItem("orionforge_salvos")) || [];
+  const salvos =
+    JSON.parse(localStorage.getItem("orionforge_salvos")) || [];
 
   if (salvos.length === 0) {
     lista.innerHTML = "<p>Nenhum conteúdo salvo ainda.</p>";
@@ -469,76 +1013,142 @@ function carregarSalvos() {
 
 function limparSalvos() {
   tocarPapel();
+
   localStorage.removeItem("orionforge_salvos");
+
   carregarSalvos();
+
   mostrarToast("🗑️ Todos os salvos foram removidos!");
 }
 
-function gerarForjaRapida() {
-  tocarForjaPesada();
-  atualizarResultado(`
-    <h2>⚒️ Forja Rápida</h2>
 
-    <hr>
+// =========================
+// TEMA
+// =========================
 
-    <h3>🎭 NPC</h3>
-    <p><strong>Nome:</strong> ${aleatorio(nomes)}</p>
-    <p><strong>Profissão:</strong> ${aleatorio(profissoes)}</p>
+function alternarTema() {
+  document.body.classList.toggle("tema-arcano");
 
-    <hr>
+  const ativo =
+    document.body.classList.contains("tema-arcano");
 
-    <h3>📜 Missão</h3>
-    <p>${aleatorio(ganchos)} ${aleatorio(locais)}.</p>
-    <p><strong>Recompensa:</strong> ${aleatorio(recompensas)}.</p>
+  localStorage.setItem(
+    "orionforge_tema",
+    ativo ? "arcano" : "magma"
+  );
 
-    <hr>
-
-    <h3>🌍 Região</h3>
-    <p><strong>Economia:</strong> ${aleatorio(economias)}</p>
-    <p><strong>Regime:</strong> ${aleatorio(regimes)}</p>
-
-    <hr>
-
-    <h3>✨ Item Especial</h3>
-    <p><strong>${aleatorio(itensMagicos)}</strong></p>
-    <p>${aleatorio(efeitos)}.</p>
-  `);
+  mostrarToast(
+    ativo
+      ? "🌙 Tema Arcano ativado!"
+      : "🌋 Tema Magma ativado!"
+  );
 }
+
+
+// =========================
+// INICIALIZAÇÃO
+// =========================
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Geradores
-  document.getElementById("btnNPC").addEventListener("click", gerarNPC);
-  document.getElementById("btnMissaoCurta").addEventListener("click", gerarMissaoCurta);
-  document.getElementById("btnMissaoLonga").addEventListener("click", gerarMissaoLonga);
-  document.getElementById("btnRegiao").addEventListener("click", gerarRegiao);
-  document.getElementById("btnItemMagico").addEventListener("click", gerarItemMagico);
-  document.getElementById("btnPuzzle").addEventListener("click", gerarPuzzle);
-  document.getElementById("btnRegraCasa").addEventListener("click", gerarRegraCasa);
-  document.getElementById("btnForjaRapida").addEventListener("click", gerarForjaRapida);
 
-  // Ações
-  document.getElementById("btnCopiar").addEventListener("click", copiarResultado);
-  document.getElementById("btnSalvar").addEventListener("click", salvarResultado);
-  document.getElementById("btnTemaMagma").addEventListener("click", alternarTema);
+  // -------------------------
+  // GERADORES
+  // -------------------------
 
-// Carregar tema salvo
-const temaSalvo = localStorage.getItem("orionforge_tema");
-if (temaSalvo === "arcano") {
-  document.body.classList.add("tema-arcano");
-}
+  const botoesGeradores = {
+    btnNPC: gerarNPC,
+    btnMissaoCurta: gerarMissaoCurta,
+    btnMissaoLonga: gerarMissaoLonga,
+    btnRegiao: gerarRegiao,
+    btnItemMagico: gerarItemMagico,
+    btnPuzzle: gerarPuzzle,
+    btnRegraCasa: gerarRegraCasa,
+    btnConfronto: gerarConfronto,
+    btnForjaRapida: gerarForjaRapida,
+    btnMercador: gerarMercador,
+    btnLootMissao: gerarLootMissao,
+    btnLootKill: gerarLootKill,
+    btnBang: gerarBang,
+    btnPapelDesafio: gerarPapelDesafio
+  };
 
-  // Configurações
-  document.getElementById("btnLimparSalvos").addEventListener("click", limparSalvos);
+  Object.entries(botoesGeradores).forEach(
+    ([id, funcao]) => {
+      const botao = document.getElementById(id);
 
-  // Abas
+      if (botao) {
+        botao.addEventListener("click", funcao);
+      }
+    }
+  );
+
+
+  // -------------------------
+  // AÇÕES
+  // -------------------------
+
+  const btnCopiar =
+    document.getElementById("btnCopiar");
+
+  if (btnCopiar) {
+    btnCopiar.addEventListener("click", copiarResultado);
+  }
+
+  const btnSalvar =
+    document.getElementById("btnSalvar");
+
+  if (btnSalvar) {
+    btnSalvar.addEventListener("click", salvarResultado);
+  }
+
+  const btnTema =
+    document.getElementById("btnTemaMagma");
+
+  if (btnTema) {
+    btnTema.addEventListener("click", alternarTema);
+  }
+
+  const btnLimpar =
+    document.getElementById("btnLimparSalvos");
+
+  if (btnLimpar) {
+    btnLimpar.addEventListener("click", limparSalvos);
+  }
+
+
+  // -------------------------
+  // TEMA SALVO
+  // -------------------------
+
+  const temaSalvo =
+    localStorage.getItem("orionforge_tema");
+
+  if (temaSalvo === "arcano") {
+    document.body.classList.add("tema-arcano");
+  }
+
+
+  // -------------------------
+  // ABAS
+  // -------------------------
+
   document.querySelectorAll(".tab").forEach(tab => {
+
     tab.addEventListener("click", () => {
-      document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-      document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+
+      document
+        .querySelectorAll(".tab")
+        .forEach(t => t.classList.remove("active"));
+
+      document
+        .querySelectorAll(".tab-content")
+        .forEach(c => c.classList.remove("active"));
 
       tab.classList.add("active");
 
-      const alvo = document.getElementById(tab.dataset.tab);
+      const alvo =
+        document.getElementById(tab.dataset.tab);
+
       if (alvo) {
         alvo.classList.add("active");
       }
@@ -547,28 +1157,14 @@ if (temaSalvo === "arcano") {
         carregarSalvos();
       }
     });
+
   });
 
+
+  // -------------------------
+  // SALVOS INICIAIS
+  // -------------------------
+
   carregarSalvos();
+
 });
-
-function atualizarResultado(html) {
-  const resultado = document.getElementById("resultado");
-
-  resultado.classList.add("forjando");
-
-  setTimeout(() => {
-    resultado.innerHTML = html;
-    resultado.classList.remove("forjando");
-  }, 120);
-}
-
-function alternarTema() {
-  document.body.classList.toggle("tema-arcano");
-
-  const ativo = document.body.classList.contains("tema-arcano");
-
-  localStorage.setItem("orionforge_tema", ativo ? "arcano" : "magma");
-
-  mostrarToast(ativo ? "🌙 Tema Arcano ativado!" : "🌋 Tema Magma ativado!");
-}

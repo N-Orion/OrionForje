@@ -60,14 +60,210 @@
     
 </div>
             <div class="botoes">
-                <button id="btnForjaRapida" class="destaque">⚒️ Forja Rápida</button>
-                <button id="btnNPC">🎲 Gerar NPC</button>
-                <button id="btnMissaoCurta">📜 Missão Curta</button>
-                <button id="btnMissaoLonga">🗺️ Missão Longa</button>
-                <button id="btnRegiao">🌍 Gerar Região</button>
-                <button id="btnItemMagico">✨ Gerar Item Mágico</button>
-                <button id="btnPuzzle">🧩 Gerar Puzzle</button>
-                <button id="btnRegraCasa">🎭 Regra da Casa</button>
+                <!-- FORJA RÁPIDA -->
+<div class="forja-destaque">
+    <div class="forja-icone">⚒️</div>
+
+    <div class="forja-texto">
+        <h2>Forja Rápida</h2>
+        <p>
+            Gere um conjunto completo de ideias para sua sessão
+            com um único clique.
+        </p>
+    </div>
+
+    <button id="btnForjaRapida" class="btn-forja">
+        Forjar campanha
+    </button>
+</div>
+
+
+<!-- CATEGORIAS -->
+<div class="categorias">
+
+    <!-- PERSONAGENS -->
+    <details class="categoria" open>
+        <summary>
+            <span>🎭</span>
+            <div>
+                <strong>Personagens</strong>
+                <small>NPCs, mercadores e personalidades</small>
+            </div>
+        </summary>
+
+        <div class="ferramentas-grid">
+
+            <button id="btnNPC" class="ferramenta">
+                <span>🎲</span>
+                <div>
+                    <strong>Gerar NPC</strong>
+                    <small>Crie um personagem completo</small>
+                </div>
+            </button>
+
+            <button id="btnMercador" class="ferramenta">
+                <span>🧑‍💼</span>
+                <div>
+                    <strong>Gerar Mercador</strong>
+                    <small>Comércio, especialidade e peculiaridade</small>
+                </div>
+            </button>
+
+        </div>
+    </details>
+
+
+    <!-- AVENTURAS -->
+    <details class="categoria">
+        <summary>
+            <span>📜</span>
+            <div>
+                <strong>Aventuras</strong>
+                <small>Missões, recompensas e acontecimentos</small>
+            </div>
+        </summary>
+
+        <div class="ferramentas-grid">
+
+            <button id="btnMissaoCurta" class="ferramenta">
+                <span>📜</span>
+                <div>
+                    <strong>Missão Curta</strong>
+                    <small>Uma aventura rápida para sua sessão</small>
+                </div>
+            </button>
+
+            <button id="btnMissaoLonga" class="ferramenta">
+                <span>🗺️</span>
+                <div>
+                    <strong>Missão Longa</strong>
+                    <small>Uma aventura com mais desenvolvimento</small>
+                </div>
+            </button>
+
+            <button id="btnLootMissao" class="ferramenta">
+                <span>🎁</span>
+                <div>
+                    <strong>Loot de Missão</strong>
+                    <small>Recompensas com significado narrativo</small>
+                </div>
+            </button>
+
+            <button id="btnBang" class="ferramenta">
+                <span>💥</span>
+                <div>
+                    <strong>Gerar Bang</strong>
+                    <small>Coloque a história em movimento</small>
+                </div>
+            </button>
+
+        </div>
+    </details>
+
+
+    <!-- MUNDO -->
+    <details class="categoria">
+        <summary>
+            <span>🌍</span>
+            <div>
+                <strong>Worldbuilding</strong>
+                <small>Regiões, magia e elementos do mundo</small>
+            </div>
+        </summary>
+
+        <div class="ferramentas-grid">
+
+            <button id="btnRegiao" class="ferramenta">
+                <span>🌍</span>
+                <div>
+                    <strong>Gerar Região</strong>
+                    <small>Crie lugares e culturas rapidamente</small>
+                </div>
+            </button>
+
+            <button id="btnItemMagico" class="ferramenta">
+                <span>✨</span>
+                <div>
+                    <strong>Item Mágico</strong>
+                    <small>Crie artefatos e efeitos mágicos</small>
+                </div>
+            </button>
+
+        </div>
+    </details>
+
+   <!-- CONFRONTOS -->
+<details class="categoria">
+
+    <summary>
+        <span>⚔️</span>
+
+        <div>
+            <strong>Confrontos</strong>
+            <small>Desafios, perigos e encontros narrativos</small>
+        </div>
+    </summary>
+
+    <div class="ferramentas-grid">
+
+        <button id="btnConfronto" class="ferramenta">
+
+            <span>⚔️</span>
+
+            <div>
+                <strong>Gerar Confronto</strong>
+                <small>
+                    Crie um desafio sem depender de um sistema específico
+                </small>
+            </div>
+
+        </button>
+
+    </div>
+
+</details>
+
+
+    <!-- RECURSOS DE MESA -->
+    <details class="categoria">
+        <summary>
+            <span>🎲</span>
+            <div>
+                <strong>Recursos de Mesa</strong>
+                <small>Ferramentas para improvisar durante a sessão</small>
+            </div>
+        </summary>
+
+        <div class="ferramentas-grid">
+
+            <button id="btnLootKill" class="ferramenta">
+                <span>💀</span>
+                <div>
+                    <strong>Loot de Combate</strong>
+                    <small>O que os jogadores encontram após uma luta</small>
+                </div>
+            </button>
+
+            <button id="btnPuzzle" class="ferramenta">
+                <span>🧩</span>
+                <div>
+                    <strong>Gerar Puzzle</strong>
+                    <small>Desafios para os jogadores resolverem</small>
+                </div>
+            </button>
+
+            <button id="btnRegraCasa" class="ferramenta">
+                <span>🎭</span>
+                <div>
+                    <strong>Regra da Casa</strong>
+                    <small>Regras especiais para sua mesa</small>
+                </div>
+            </button>
+
+        </div>
+    </details>
+
+</div>
                 <p class="hint">
   💡 Dica: use <strong>⚒️ Forja Rápida</strong> para gerar um NPC, uma missão, uma região e um item mágico de uma só vez.
 </p>
@@ -105,22 +301,25 @@
         </div>
 
 
-        <div class="footer">
-  <p>⚒️ OrionForge © 2026</p>
-  <p class="footer-desc">
-    Ferramentas narrativas para mestres de RPG forjarem campanhas em segundos.
-  </p>
+               <div class="footer"> 
+            <p>⚒️ OrionForge © 2026</p> 
+            
+            <p class="footer-desc"> 
+                Ferramentas narrativas para mestres de RPG forjarem campanhas em segundos. 
+            </p> 
+ 
+            <div class="footer-links"> 
+                <a href="sobre.html">Sobre</a> 
+                <a href="contato.html">Contato</a> 
+                <a href="privacidade.html">Privacidade</a> 
+                <a href="termos.html">Termos</a> 
+            </div> 
+        </div>
 
-  <div class="footer-links">
-    <a href="sobre.html">Sobre</a>
-    <a href="contato.html">Contato</a>
-    <a href="privacidade.html">Privacidade</a>
-    <a href="termos.html">Termos</a>
-  </div>
-</div>
+    </div> <!-- fecha .container -->
 
-    <div id="toast" class="toast"></div>
-
-    <script src="script.js"></script>
-</body>
+    <div id="toast" class="toast"></div> 
+ 
+    <script src="script.js"></script> 
+</body> 
 </html>
